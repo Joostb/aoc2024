@@ -3,6 +3,9 @@ use day::Day;
 use std::fs::read_to_string;
 mod day;
 mod day1;
+mod day2;
+mod day3;
+mod day4;
 #[derive(Parser)]
 struct Cli {
     #[arg(short, long)]
@@ -17,19 +20,19 @@ fn main() {
 }
 
 fn get_result(args: Cli) -> String {
-    let input = read_to_string("inputs/1.txt").unwrap();
-    let result;
+    let input = read_to_string(format!("inputs/{}.txt", args.day)).unwrap();
 
-    let day = match args.day {
-        1 => day1::Day1,
+    let day: Box<dyn Day> = match args.day {
+        1 => Box::new(day1::Day1),
+        2 => Box::new(day2::Day2),
+        3 => Box::new(day3::Day3),
+        4 => Box::new(day4::Day4),
         _ => todo!(),
     };
 
     if args.part == 1 {
-        result = Some(day.part1(&input));
+        day.part1(&input).to_string()
     } else {
-        result = Some(day.part2(&input));
+        day.part2(&input)
     }
-
-    result.unwrap()
 }

@@ -17,7 +17,7 @@ impl Day1 {
     }
 }
 impl Day for Day1 {
-    fn part1(self, input: &str) -> String {
+    fn part1(&self, input: &str) -> String {
         let (mut l, mut r) = Day1::parse_input(input);
 
         l.sort();
@@ -26,7 +26,7 @@ impl Day for Day1 {
         format!("{}", result)
     }
 
-    fn part2(self, input: &str) -> String {
+    fn part2(&self, input: &str) -> String {
         let (l, r) = Day1::parse_input(input);
         let result: i32 = l
             .iter()
