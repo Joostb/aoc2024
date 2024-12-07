@@ -6,6 +6,7 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
 #[derive(Parser)]
 struct Cli {
     #[arg(short, long)]
@@ -27,6 +28,7 @@ fn get_result(args: Cli) -> String {
         2 => Box::new(day2::Day2),
         3 => Box::new(day3::Day3),
         4 => Box::new(day4::Day4),
+        5 => Box::new(day5::Day5),
         _ => todo!(),
     };
 
