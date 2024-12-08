@@ -14,10 +14,6 @@ fn parse_input(input: &str) -> Vec<(usize, Vec<usize>)> {
         .collect();
     input
 }
-enum Operator {
-    Add,
-    Multiply,
-}
 impl Day for Day7 {
     fn part1(&self, input: &str) -> String {
         let input = parse_input(&input);
