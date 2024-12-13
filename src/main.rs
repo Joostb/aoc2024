@@ -3,6 +3,7 @@ use day::Day;
 use std::fs::read_to_string;
 mod day;
 mod day1;
+mod day13;
 mod day2;
 mod day3;
 mod day4;
@@ -35,6 +36,7 @@ fn get_result(args: Cli) -> String {
         6 => Box::new(day6::Day6),
         7 => Box::new(day7::Day7),
         8 => Box::new(day8::Day8),
+        13 => Box::new(day13::Day13),
         _ => todo!(),
     };
 
