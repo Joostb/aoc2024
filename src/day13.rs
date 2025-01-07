@@ -40,28 +40,7 @@ impl Day for Day13 {
         input
             .iter()
             .map(|block| {
-                let mut lowest_price = 10000;
-                let mut x = 0;
-                let mut y = 0;
-                for a in 0..101 {
-                    for b in 0..101 {
-                        if block.a_x * a + block.b_x * b == block.price_x
-                            && block.a_y * a + block.b_y * b == block.price_y
-                        {
-                            if lowest_price > a + b {
-                                x = a;
-                                y = b;
-                                lowest_price = 3 * a + b;
-                            }
-                        }
-                    }
-                }
-                if lowest_price == 10000 {
-                    return 0;
-                }
-                println!("{:?}", block);
-                println!("{},{}: {:?}", x, y, lowest_price);
-                lowest_price
+let a_x =                block.a_x * block
             })
             .sum::<Num>()
             .to_string()
