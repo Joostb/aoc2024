@@ -1,52 +1,44 @@
-use regex::Regex;
+// use regex::Regex;
 
 use super::day::Day;
 pub(crate) struct Day13;
-fn parse_input(input: &str) -> Vec<Bla> {
-    let re = Regex::new(r"\d+").unwrap();
-    // let re = Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)").unwrap();
-    let input: Vec<Bla> = input
-        .split("\n\n")
-        .filter(|a| a.len() > 3)
-        .map(|block| {
-            let mut iter = re.find_iter(block).map(|m| m.as_str().parse().unwrap());
-            Bla {
-                a_x: iter.next().unwrap(),
+// fn parse_input(input: &str) -> Vec<Bla> {
+//     let re = Regex::new(r"\d+").unwrap();
+//     // let re = Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)").unwrap();
+//     let input: Vec<Bla> = input
+//         .split("\n\n")
+//         .filter(|a| a.len() > 3)
+//         .map(|block| {
+//             let mut iter = re.find_iter(block).map(|m| m.as_str().parse().unwrap());
+//             Bla {
+//                 a_x: iter.next().unwrap(),
 
-                a_y: iter.next().unwrap(),
-                b_x: iter.next().unwrap(),
-                b_y: iter.next().unwrap(),
-                price_x: iter.next().unwrap(),
-                price_y: iter.next().unwrap(),
-            }
-        })
-        .collect();
-    input
-}
-type Num = usize;
-#[derive(Debug)]
-struct Bla {
-    a_x: Num,
-    a_y: Num,
-    b_x: Num,
-    b_y: Num,
-    price_x: Num,
-    price_y: Num,
-}
+//                 a_y: iter.next().unwrap(),
+//                 b_x: iter.next().unwrap(),
+//                 b_y: iter.next().unwrap(),
+//                 price_x: iter.next().unwrap(),
+//                 price_y: iter.next().unwrap(),
+//             }
+//         })
+//         .collect();
+//     input
+// }
+// type Num = usize;
+// #[derive(Debug)]
+// struct Bla {
+//     a_x: Num,
+//     a_y: Num,
+//     b_x: Num,
+//     b_y: Num,
+//     price_x: Num,
+//     price_y: Num,
+// }
 impl Day for Day13 {
-    fn part1(&self, input: &str) -> String {
-        let input = parse_input(&input);
-
-        input
-            .iter()
-            .map(|block| {
-let a_x =                block.a_x * block
-            })
-            .sum::<Num>()
-            .to_string()
+    fn part1(&self, _input: &str) -> String {
+        todo!()
     }
 
-    fn part2(&self, input: &str) -> String {
+    fn part2(&self, _input: &str) -> String {
         todo!()
     }
 }
